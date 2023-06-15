@@ -5,7 +5,7 @@ import { getDatabase, ref, set } from "firebase/database";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configurationconst firebaseConfig = {
+// Your web app's Firebase configuration
 const firebaseConfig = {
     apiKey: "AIzaSyBeAJDTdhMFL4wPuLAGp4ZFco84yveg5EU",
     authDomain: "booking-d228c.firebaseapp.com",
@@ -15,34 +15,33 @@ const firebaseConfig = {
     messagingSenderId: "572844036898",
     appId: "1:572844036898:web:6267125104e2a8508d4b7b",
 };
-
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const database = getDatabase();
 const Book = () => {
     let Hotels = [{
-                name: "Hotel 1",
-                price: "100",
-                image: "https://images.unsplash.com/photo-1455587734955-081b22074882?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-            },
+            name: "Hotel 1",
+            price: "100",
+            image: "https://images.unsplash.com/photo-1455587734955-081b22074882?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+        },
 
-            {
-                name: "Hotel 2",
-                price: "200",
-                image: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-            },
-            {
-                name: "Hotel 3",
-                price: "300",
-                image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-            },
-            {
-                name: "Hotel 4",
-                price: "400",
-                image: "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-            },
-        ]
-        // console.log(Hotels[0].price);
+        {
+            name: "Hotel 2",
+            price: "200",
+            image: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+        },
+        {
+            name: "Hotel 3",
+            price: "300",
+            image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+        },
+        {
+            name: "Hotel 4",
+            price: "400",
+            image: "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+        },
+    ];
+    // console.log(Hotels[0].price);
     const bookHotel1 = (event) => {
         console.log(event);
         const imageTarget = document.querySelector("#targetImage");
@@ -53,7 +52,7 @@ const Book = () => {
 
         imageTarget.src = Hotels[0].image;
         nameTarget.innerHTML = Hotels[0].name;
-        priceTarget.innerHTML = '$' + Hotels[0].price;
+        priceTarget.innerHTML = "$" + Hotels[0].price;
         cards.style.display = "none";
         request.style.display = "block";
 
@@ -61,14 +60,13 @@ const Book = () => {
 
         function writeUserData() {
             const db = getDatabase();
-            set(ref(db, 'booking/'), {
+            set(ref(db, "booking/"), {
                 HotelImage: Hotels[0].image,
                 HotelName: Hotels[0].name,
-                HotelPrice: '$' + Hotels[0].price,
+                HotelPrice: "$" + Hotels[0].price,
             });
         }
-
-    }
+    };
     const bookHotel2 = (event) => {
         console.log(event);
         const imageTarget = document.querySelector("#targetImage");
@@ -79,7 +77,7 @@ const Book = () => {
 
         imageTarget.src = Hotels[1].image;
         nameTarget.innerHTML = Hotels[1].name;
-        priceTarget.innerHTML = '$' + Hotels[1].price;
+        priceTarget.innerHTML = "$" + Hotels[1].price;
         cards.style.display = "none";
         request.style.display = "block";
 
@@ -87,13 +85,13 @@ const Book = () => {
 
         function writeUserData() {
             const db = getDatabase();
-            set(ref(db, 'booking/'), {
+            set(ref(db, "booking/"), {
                 HotelImage: Hotels[1].image,
                 HotelName: Hotels[1].name,
-                HotelPrice: '$' + Hotels[1].price,
+                HotelPrice: "$" + Hotels[1].price,
             });
         }
-    }
+    };
     const bookHotel3 = (event) => {
         console.log(event);
         const imageTarget = document.querySelector("#targetImage");
@@ -104,7 +102,7 @@ const Book = () => {
 
         imageTarget.src = Hotels[2].image;
         nameTarget.innerHTML = Hotels[2].name;
-        priceTarget.innerHTML = '$' + Hotels[2].price;
+        priceTarget.innerHTML = "$" + Hotels[2].price;
         cards.style.display = "none";
         request.style.display = "block";
 
@@ -112,13 +110,13 @@ const Book = () => {
 
         function writeUserData() {
             const db = getDatabase();
-            set(ref(db, 'booking/'), {
+            set(ref(db, "booking/"), {
                 HotelImage: Hotels[2].image,
                 HotelName: Hotels[2].name,
-                HotelPrice: '$' + Hotels[2].price,
+                HotelPrice: "$" + Hotels[2].price,
             });
         }
-    }
+    };
     const bookHotel4 = (event) => {
         console.log(event);
         const imageTarget = document.querySelector("#targetImage");
@@ -129,7 +127,7 @@ const Book = () => {
 
         imageTarget.src = Hotels[3].image;
         nameTarget.innerHTML = Hotels[3].name;
-        priceTarget.innerHTML = '$' + Hotels[3].price;
+        priceTarget.innerHTML = "$" + Hotels[3].price;
         cards.style.display = "none";
         request.style.display = "block";
 
@@ -137,13 +135,13 @@ const Book = () => {
 
         function writeUserData() {
             const db = getDatabase();
-            set(ref(db, 'booking/'), {
+            set(ref(db, "booking/"), {
                 HotelImage: Hotels[3].image,
                 HotelName: Hotels[3].name,
-                HotelPrice: '$' + Hotels[3].price,
+                HotelPrice: "$" + Hotels[3].price,
             });
         }
-    }
+    };
     const request = (event) => {
         console.log(event);
         const imageTarget = document.querySelector("#targetImage");
@@ -155,11 +153,10 @@ const Book = () => {
         cards.style.display = "block";
         alert("Your request has been sent");
 
-        imageTarget.src = '';
-        nameTarget.innerHTML = '';
-        priceTarget.innerHTML = '';
-
-    }
+        imageTarget.src = "";
+        nameTarget.innerHTML = "";
+        priceTarget.innerHTML = "";
+    };
     return ( <
         div className = "box" >
         <
@@ -173,13 +170,13 @@ const Book = () => {
         div className = "card" >
         <
         img src = ""
-        id = 'targetImage'
+        id = "targetImage"
         alt = "" / >
         <
         div className = "hotel_name"
-        id = 'targetName' > < /div> <
+        id = "targetName" > < /div> <
         div className = "price"
-        id = 'targetPrice' > < /div> < /
+        id = "targetPrice" > < /div> < /
         div > <
         /div> < /
         div > <
@@ -194,7 +191,7 @@ const Book = () => {
         alt = "hotel1" / >
         <
         div className = "hotel_name" > { Hotels[0].name } < /div> <
-        div className = "price" > { '$' + Hotels[0].price } < /div> < /
+        div className = "price" > { "$" + Hotels[0].price } < /div> < /
         div > { /*  */ } <
         div className = "card"
         onClick = { bookHotel2 } >
@@ -203,7 +200,7 @@ const Book = () => {
         alt = "hotel2" / >
         <
         div className = "hotel_name" > { Hotels[1].name } < /div> <
-        div className = "price" > { '$' + Hotels[1].price } < /div> < /
+        div className = "price" > { "$" + Hotels[1].price } < /div> < /
         div > { /*  */ } <
         div className = "card"
         onClick = { bookHotel3 } >
@@ -212,7 +209,7 @@ const Book = () => {
         alt = "hotel3" / >
         <
         div className = "hotel_name" > { Hotels[2].name } < /div> <
-        div className = "price" > { '$' + Hotels[2].price } < /div> < /
+        div className = "price" > { "$" + Hotels[2].price } < /div> < /
         div > { /*  */ } <
         div className = "card"
         onClick = { bookHotel4 } >
@@ -221,17 +218,19 @@ const Book = () => {
         alt = "hotel4" / >
         <
         div className = "hotel_name" > { Hotels[3].name } < /div> <
-        div className = "price" > { '$' + Hotels[3].price } < /div> < /
+        div className = "price" > { "$" + Hotels[3].price } < /div> < /
         div > <
         /div> <
         div className = "request" >
         <
         button className = "btn"
-        onClick = { request } > Request < /button> < /
+        onClick = { request } >
+        Request <
+        /button> < /
         div > <
         /div> < /
         div > <
         /div>
-    )
-}
+    );
+};
 export default Book;
